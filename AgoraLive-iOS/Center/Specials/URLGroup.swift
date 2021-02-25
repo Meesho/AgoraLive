@@ -9,13 +9,7 @@
 import UIKit
 
 struct URLGroup {
-    #if PREPRODUCT
-    private static let host = "http://api-solutions-pre.sh.agoralab.co/"
-    #elseif PRODUCT
-    private static let host = "http://api-solutions.sh.agoralab.co/"
-    #else
-    private static let host = "http://api-solutions-dev.sh.agoralab.co/"
-    #endif
+    private static let host = "http://api.agora.io/"
     private static let mainPath = "ent/v1/"
     
     static var userRegister: String {
