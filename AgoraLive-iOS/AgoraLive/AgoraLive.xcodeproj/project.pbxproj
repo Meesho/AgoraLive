@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DDE869F2698584300094608 /* Policy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDE86A12698584300094608 /* Policy.storyboard */; };
+		1DDE86A82698592A00094608 /* Agora_Privacy_Policy_en.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDE86A62698592A00094608 /* Agora_Privacy_Policy_en.rtf */; };
+		1DDE86A92698592A00094608 /* Agora_Privacy_Policy_cn.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1DDE86A72698592A00094608 /* Agora_Privacy_Policy_cn.rtf */; };
+		1DDE86AB269859BF00094608 /* TermsAndPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE86AA269859BF00094608 /* TermsAndPolicyView.swift */; };
+		1DDE86AD26985A6700094608 /* TermsAndPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDE86AC26985A6700094608 /* TermsAndPolicyViewController.swift */; };
 		5C815897D3298150823074AF /* Pods_AgoraLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B455272B1AE17AD3814D3C67 /* Pods_AgoraLive.framework */; };
 		A7053A41241A2C290061E5E2 /* BeautySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7053A40241A2C290061E5E2 /* BeautySettingsViewController.swift */; };
 		A711AB83243EF83800C2A3FD /* GIFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711AB82243EF83800C2A3FD /* GIFViewController.swift */; };
@@ -158,6 +163,13 @@
 		082C9E83E5903709E7F89EB6 /* Pods-AgoraLive-Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive-Dev.release.xcconfig"; path = "Target Support Files/Pods-AgoraLive-Dev/Pods-AgoraLive-Dev.release.xcconfig"; sourceTree = "<group>"; };
 		0D77F57C20847D7309A00368 /* Pods-AgoraLive-QA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive-QA.debug.xcconfig"; path = "Target Support Files/Pods-AgoraLive-QA/Pods-AgoraLive-QA.debug.xcconfig"; sourceTree = "<group>"; };
 		18414857EA87443471255598 /* Pods-AgoraLive.qa-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive.qa-dev.xcconfig"; path = "Target Support Files/Pods-AgoraLive/Pods-AgoraLive.qa-dev.xcconfig"; sourceTree = "<group>"; };
+		1DDE86A02698584300094608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Policy.storyboard; sourceTree = "<group>"; };
+		1DDE86A32698584900094608 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Policy.strings; sourceTree = "<group>"; };
+		1DDE86A52698584A00094608 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Policy.strings"; sourceTree = "<group>"; };
+		1DDE86A62698592A00094608 /* Agora_Privacy_Policy_en.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Agora_Privacy_Policy_en.rtf; sourceTree = "<group>"; };
+		1DDE86A72698592A00094608 /* Agora_Privacy_Policy_cn.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Agora_Privacy_Policy_cn.rtf; sourceTree = "<group>"; };
+		1DDE86AA269859BF00094608 /* TermsAndPolicyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndPolicyView.swift; sourceTree = "<group>"; };
+		1DDE86AC26985A6700094608 /* TermsAndPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndPolicyViewController.swift; sourceTree = "<group>"; };
 		1F308420F77498A6670DDED4 /* Pods-AgoraLive-Release.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive-Release.debug.xcconfig"; path = "Target Support Files/Pods-AgoraLive-Release/Pods-AgoraLive-Release.debug.xcconfig"; sourceTree = "<group>"; };
 		303FD145CF503D71440928AB /* Pods-AgoraLive-QA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive-QA.release.xcconfig"; path = "Target Support Files/Pods-AgoraLive-QA/Pods-AgoraLive-QA.release.xcconfig"; sourceTree = "<group>"; };
 		3081F7E59DB9D6938ECEB5E0 /* Pods-AgoraLive.lab2020-pre.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AgoraLive.lab2020-pre.xcconfig"; path = "Target Support Files/Pods-AgoraLive/Pods-AgoraLive.lab2020-pre.xcconfig"; sourceTree = "<group>"; };
@@ -758,6 +770,8 @@
 		A76BD14123F27F2300B2732B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1DDE86A72698592A00094608 /* Agora_Privacy_Policy_cn.rtf */,
+				1DDE86A62698592A00094608 /* Agora_Privacy_Policy_en.rtf */,
 				A72B7BEB24445DEF00E965FB /* Assets.xcassets */,
 				A76BD13C23F25F6500B2732B /* Localizable.strings */,
 			);
@@ -771,6 +785,7 @@
 				A76BD12623F1035500B2732B /* Main.storyboard */,
 				A747ED7824CFF810002F2DB0 /* Live.storyboard */,
 				A747ED7624CFF4E8002F2DB0 /* Popover.storyboard */,
+				1DDE86A12698584300094608 /* Policy.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -778,6 +793,8 @@
 		A76BD14323F2852500B2732B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1DDE86AC26985A6700094608 /* TermsAndPolicyViewController.swift */,
+				1DDE86AA269859BF00094608 /* TermsAndPolicyView.swift */,
 				A773BD4F240E4CC1003ECBFD /* MainTabBarViewController.swift */,
 				A76BD13E23F26E0400B2732B /* LiveTypeViewController.swift */,
 				A7FDB59E23FD2B0C00487FB9 /* LiveListTabViewController.swift */,
@@ -936,6 +953,7 @@
 				A77E574E24A8955700DD7670 /* SuperDiamond.gif in Resources */,
 				A77E574F24A8955700DD7670 /* sound.gif in Resources */,
 				A77E574B24A8955700DD7670 /* SuperRocket.gif in Resources */,
+				1DDE86A92698592A00094608 /* Agora_Privacy_Policy_cn.rtf in Resources */,
 				A747ED7724CFF4E8002F2DB0 /* Popover.storyboard in Resources */,
 				A76BD12D23F1035600B2732B /* LaunchScreen.storyboard in Resources */,
 				A77E574A24A8955700DD7670 /* SuperWine.gif in Resources */,
@@ -944,7 +962,9 @@
 				A77E574724A8955700DD7670 /* SuperBell.gif in Resources */,
 				A776F71F24BEA711001B16B1 /* hashiqi.bundle in Resources */,
 				A77E574924A8955700DD7670 /* SuperWatch.gif in Resources */,
+				1DDE86A82698592A00094608 /* Agora_Privacy_Policy_en.rtf in Resources */,
 				A76BD12823F1035500B2732B /* Main.storyboard in Resources */,
+				1DDE869F2698584300094608 /* Policy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1048,6 +1068,7 @@
 				A75C709E24FCF878003E5AD9 /* DataExtension.swift in Sources */,
 				A75C70B624FCF878003E5AD9 /* aestab.c in Sources */,
 				A75C70AA24FCF878003E5AD9 /* ioapi.c in Sources */,
+				1DDE86AD26985A6700094608 /* TermsAndPolicyViewController.swift in Sources */,
 				A75C709624FCF878003E5AD9 /* LCLLogFile.m in Sources */,
 				A75C6FAB24FCCA6E003E5AD9 /* UIView+ExProperty.m in Sources */,
 				A75C709324FCF878003E5AD9 /* RTMObserver.swift in Sources */,
@@ -1130,6 +1151,7 @@
 				A75C709924FCF878003E5AD9 /* RTMHelper.swift in Sources */,
 				A75C70BC24FCF878003E5AD9 /* URLGroup.swift in Sources */,
 				A791F33E2428B121008D8BC9 /* LiveSeatViewController.swift in Sources */,
+				1DDE86AB269859BF00094608 /* TermsAndPolicyView.swift in Sources */,
 				A75C70A924FCF878003E5AD9 /* zip.c in Sources */,
 				A71AAF2A2435D8BE00820096 /* RealDataViewController.swift in Sources */,
 				A75C709224FCF878003E5AD9 /* AGEError.swift in Sources */,
@@ -1142,6 +1164,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1DDE86A12698584300094608 /* Policy.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1DDE86A02698584300094608 /* Base */,
+				1DDE86A32698584900094608 /* en */,
+				1DDE86A52698584A00094608 /* zh-Hans */,
+			);
+			name = Policy.storyboard;
+			sourceTree = "<group>";
+		};
 		A76BD12623F1035500B2732B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
