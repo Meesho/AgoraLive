@@ -195,7 +195,7 @@
     <string name="dialog_positive_button">确定</string>
     <string name="dialog_positive_button_accept">接受</string>
     <string name="dialog_negative_button_refuse">拒绝</string>
-    
+
     <string name="end_live_streaming_title_owner">结束直播</string>
     <string name="end_live_streaming_message_owner">是否结束直播?</string>
 

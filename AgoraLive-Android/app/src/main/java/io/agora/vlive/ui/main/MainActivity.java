@@ -27,6 +27,7 @@ import io.agora.vlive.protocol.model.response.LoginResponse;
 import io.agora.vlive.protocol.model.response.MusicListResponse;
 import io.agora.vlive.protocol.model.response.Response;
 import io.agora.vlive.ui.BaseActivity;
+import io.agora.vlive.ui.components.PrivacyTermsDialog;
 import io.agora.vlive.utils.Global;
 import io.agora.vlive.utils.RandomUtil;
 
@@ -38,14 +39,34 @@ public class MainActivity extends BaseActivity {
     private BottomNavigationView mNavView;
     private NavController mNavController;
     private int mAppIdTryCount;
+    private PrivacyTermsDialog termsDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideStatusBar(true);
         setContentView(R.layout.activity_main);
+        initPrivacy();
         initUI();
         initAsync();
+    }
+
+    private void initPrivacy() {
+        if (!preferences().getBoolean(Global.Constants.KEY_SHOW_PRIVACY, false)) {
+            termsDialog = new PrivacyTermsDialog(this);
+            termsDialog.setPrivacyTermsDialogListener(new PrivacyTermsDialog.OnPrivacyTermsDialogListener() {
+                @Override
+                public void onPositiveClick() {
+                    preferences().edit().putBoolean(Global.Constants.KEY_SHOW_PRIVACY, true).apply();
+                }
+
+                @Override
+                public void onNegativeClick() {
+                    finish();
+                }
+            });
+            termsDialog.show();
+        }
     }
 
     private void initUI() {
@@ -221,6 +242,14 @@ public class MainActivity extends BaseActivity {
                 break;
             default: runOnUiThread(() -> showLongToast("Request type: "+
                     Request.getRequestString(requestType) + " " + message));
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (termsDialog != null) {
+            termsDialog.dismiss();
         }
     }
 }
