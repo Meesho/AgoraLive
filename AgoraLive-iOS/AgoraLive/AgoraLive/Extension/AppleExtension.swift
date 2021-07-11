@@ -94,19 +94,33 @@ extension String {
 
 extension UIScreen {
     var isNotch: Bool {
-        if bounds.height == 896.0 || bounds.height == 812.0 {
-            return true
+        if #available(iOS 11.0, *),
+           let safeAreaInsets = UIApplication.shared.keyWindow?.safeAreaInsets  {
+            return safeAreaInsets.left > 0.0 ||
+                safeAreaInsets.top > 0.0 ||
+                safeAreaInsets.right > 0.0 ||
+                safeAreaInsets.bottom > 0.0
         } else {
             return false
         }
     }
     
     var heightOfSafeAreaTop: CGFloat {
-        return (self.isNotch ? 44 : 20)
+        if #available(iOS 11.0, *),
+           let safeAreaInsets = UIApplication.shared.keyWindow?.safeAreaInsets  {
+            return safeAreaInsets.top
+        } else {
+            return 20
+        }
     }
     
     var heightOfSafeAreaBottom: CGFloat {
-        return (self.isNotch ? 34 : 0)
+        if #available(iOS 11.0, *),
+           let safeAreaInsets = UIApplication.shared.keyWindow?.safeAreaInsets  {
+            return safeAreaInsets.bottom
+        } else {
+            return 0
+        }
     }
 }
 
