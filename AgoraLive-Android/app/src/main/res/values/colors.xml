@@ -23,6 +23,8 @@
 
     <color name="red">#FF007D</color>
 
+    <color name="color_error">#fd3e3f</color>
+
     <color name="transparent_70_per">#4D000000</color>
 
     <color name="virtual_image_top">#9ED5FF</color>
@@ -41,4 +43,7 @@
     <color name="product_buy_now_bg_end_color">#FFFF8200</color>
 
     <color name="new_message_hint_color">#FFFF097E</color>
+
+    <color name="blue_600">#0087ff</color>
+
 </resources>
