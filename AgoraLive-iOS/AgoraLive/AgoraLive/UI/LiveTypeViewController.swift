@@ -16,7 +16,7 @@ class LiveTypeCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundImageViewBottom: NSLayoutConstraint!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundImageViewBottom.constant = 10
@@ -39,7 +39,7 @@ class LiveTypeViewController: MaskViewController {
         var background: UIImage
         var title: String
         var description: String
-        
+
         static var list = BehaviorRelay(value: [
             `Type`(background: UIImage(named: "pic-多人连麦")!,
                    title: NSLocalizedString("Multi_Broadcasters"),
@@ -58,19 +58,19 @@ class LiveTypeViewController: MaskViewController {
                    description: NSLocalizedString("Live_Shopping_Description")),
         ])
     }
-    
+
     @IBOutlet weak var tableViewLeft: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    
+
     private let disposeBag = DisposeBag()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Frame
         let imageWith = UIScreen.main.bounds.width - 30.0
         tableView.rowHeight = ((imageWith * 133.0) / 345.0) + 10.0
-        
+
         // DataSource
         `Type`.list.bind(to: tableView.rx.items(cellIdentifier: "LiveTypeCell",
                                                 cellType: LiveTypeCell.self)) { index, type, cell in
@@ -78,21 +78,30 @@ class LiveTypeViewController: MaskViewController {
                                                     cell.descriptionLabel.text = type.description
                                                     cell.backgroundImageView.image = type.background
         }.disposed(by: disposeBag)
-        
+
         // Selected Event
         guard let parentVC = self.parent,
             let tabbarVC = parentVC as? MainTabBarViewController else {
                 assert(false)
                 return
         }
-        
+
         let liveListTabVC = tabbarVC.findFirstChild(of: LiveListTabViewController.self)
         _ = liveListTabVC?.view
-                
+
         tableView.rx.itemSelected.subscribe(onNext: { [weak tabbarVC, weak liveListTabVC] (index) in
             let liveListTabVCIndex = 1
             tabbarVC?.selectedIndex = liveListTabVCIndex
             liveListTabVC?.tabView.selectedIndex.accept(index.row)
         }).disposed(by: disposeBag)
+
+        DispatchQueue.main.async {
+            if !TermsAndPolicyViewController.getPolicyPopped(), let termsVC = TermsAndPolicyViewController.loadFromStoryboard("Policy", "terms") {
+                termsVC.modalPresentationStyle = .fullScreen
+                termsVC.fromSetting = false
+                self.present(termsVC, animated: true, completion: nil)
+            }
+        }
     }
 }
+
