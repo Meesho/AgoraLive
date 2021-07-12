@@ -19,6 +19,7 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
         hideStatusBar(true);
 
         findViewById(R.id.about_privacy_layout).setOnClickListener(this);
+        findViewById(R.id.about_terms).setOnClickListener(this);
         findViewById(R.id.about_disclaimer_layout).setOnClickListener(this);
         findViewById(R.id.about_sign_up_layout).setOnClickListener(this);
         findViewById(R.id.about_activity_close).setOnClickListener(this);
@@ -51,6 +52,11 @@ public class AboutActivity extends BaseActivity implements View.OnClickListener 
             case R.id.about_privacy_layout:
                 String link = getString(R.string.privacy_website_link);
                 Uri uri = Uri.parse(link);
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                break;
+            case R.id.about_terms:
+                link = getString(R.string.terms_service_link);
+                uri = Uri.parse(link);
                 intent = new Intent(Intent.ACTION_VIEW, uri);
                 break;
             case R.id.about_disclaimer_layout:
