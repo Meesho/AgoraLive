@@ -101,11 +101,18 @@ class AboutViewController: MaskTableViewController {
         
         switch indexPath.row {
         case 0:
-            if let termsVC = TermsAndPolicyViewController.loadFromStoryboard("Policy", "terms") {
-                termsVC.modalPresentationStyle = .fullScreen
-                termsVC.fromSetting = true
-                self.present(termsVC, animated: true, completion: nil)
+            var privacyURL: URL?
+            if DeviceAssistant.Language.isChinese {
+                privacyURL = URL(string: "https://www.agora.io/cn/privacy-policy/")
+            } else {
+                privacyURL = URL(string: "https://www.agora.io/en/privacy-policy/")
             }
+
+            guard let url = privacyURL else {
+                return
+            }
+
+            UIApplication.shared.openURL(url)
         case 1:
             break
         case 2:
